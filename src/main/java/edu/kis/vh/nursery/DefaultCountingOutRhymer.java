@@ -2,18 +2,21 @@ package edu.kis.vh.nursery;
 
 public class DefaultCountingOutRhymer {
 
-    
-	private int total = INT;
-	private int[] numbers = new int[12];
-	private static final int INT = -1;
-	
+
+    private static final int VALUE = -1;
+    private int total = VALUE;
+    private static final int CAPATCITY = 12;
+    private int[] NUMBERS = new int[CAPATCITY];
+
+
     public void countIn(int in) {
         if (!isFull())
-            numbers[++total] = in;
+            NUMBERS[++total] = in;
     }
 
     public boolean callCheck() {
-        return total == -1;
+
+        return total == VALUE;
     }
 
     public boolean isFull() {
@@ -22,18 +25,18 @@ public class DefaultCountingOutRhymer {
 
     protected int countIn() {
         if (callCheck())
-            return -1;
-        return numbers[total];
+            return VALUE;
+        return NUMBERS[total];
     }
 
     public int countOut() {
         if (callCheck())
-            return -1;
-        return numbers[total--];
+            return VALUE;
+        return NUMBERS[total--];
     }
-	
-	public int getTotal() {
-		return total;
-	}
 
+
+    public int getTotal() {
+        return total;
+    }
 }
